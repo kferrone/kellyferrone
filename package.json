@@ -1,0 +1,19 @@
+{
+  "name": "kelly-ferrone-admin",
+  "version": "1.0.0",
+  "description": "A personal Google App Script project for just me.",
+  "main": "Code.js",
+  "types": "type.d.ts",
+  "scripts": {
+    "test": "test",
+    "status": "clasp status",
+    "push": "clasp push",
+    "pull": "clasp pull",
+    "watch": "clasp push --watch"
+  },
+  "author": "Kelly Ferrone",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.31"
+  }
+}
