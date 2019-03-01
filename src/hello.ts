@@ -7,7 +7,7 @@ const gmail = GmailApp;
 const spa = SpreadsheetApp;
 
 const greeter = (person: string) => {
-  return `Hello, ${person}!`;
+  return `Hello, ${person}! Wazzup!`;
 }
 
 function testGreeter() {
