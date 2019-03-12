@@ -2,10 +2,11 @@
 <html>
   <head>
     <base target="_top">
+    <script src="https://unpkg.com/vue"></script>
+    <?!= HtmlService.createHtmlOutputFromFile('js/foo-bar.min.js.html').getContent(); ?>
   </head>
   <body>
     <p>My Name is Kelly Ferrone</p>
+    <foo-bar></foo-bar>
   </body>
 </html>
-
-

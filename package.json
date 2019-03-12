@@ -9,11 +9,13 @@
     "status": "clasp status",
     "push": "clasp push",
     "pull": "clasp pull",
-    "watch": "clasp push --watch"
+    "watch": "clasp push --watch",
+    "serve": "vue serve ./app/App.vue"
   },
   "author": "Kelly Ferrone",
   "license": "ISC",
   "devDependencies": {
-    "@types/google-apps-script": "0.0.37"
+    "@types/google-apps-script": "0.0.37",
+    "vue": "^2.6.8"
   }
 }
