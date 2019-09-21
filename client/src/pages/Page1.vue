@@ -6,10 +6,7 @@
 	</ul>
 </div>
 </template>
-<script>
-
-export default {
+<script lang="coffee">
+export default 
   name: 'Page1'
-  
-}
 </script>

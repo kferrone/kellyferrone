@@ -7,25 +7,13 @@
 	
 </div>
 </template>
-<script>
-import BackEndWrapper from '../services/BackEndWrapper';
+<script lang="coffee">
+import BackEndWrapper from '../services/BackEndWrapper'
 export default 
-{
-  name: 'Home',
-  data(){
-  	return ({
-  		bw:new BackEndWrapper(),
-  		numbers:[]
-  	});
-  },
-  mounted()
-  {
-      console.log('Its mounted');
-  },
-  methods:
-  {
-  	
-  }
-  
-}
+  name: 'Home'
+  data: ->
+    bw: new BackEndWrapper()
+    numbers: []
+  mounted: ->
+    console.log('Its mounted')
 </script>

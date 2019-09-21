@@ -39,6 +39,14 @@ module.exports = {
         ]
       },
       {
+        test: /\.coffee$/,
+        use: [
+          {
+            loader: 'coffee-loader'
+          }
+        ]
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       }
