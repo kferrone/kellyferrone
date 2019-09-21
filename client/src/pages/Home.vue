@@ -17,6 +17,5 @@ export default
     console.log('Its mounted')
 </script>
 <style lang="sass">
-h1
-  color: #008000
+
 </style>

@@ -1,12 +1,16 @@
-<template>
-<div>
-  <h1>Page 1</h1>
-  <ul>
-		<li><router-link to="/">Home</router-link></li>
-	</ul>
-</div>
+<template lang="pug">
+#page1
+  h1 Page 1
+  ul
+    li
+      router-link( to="/") Home
+  RichTextEditor(value="<p>Hello</p>")
 </template>
 <script lang="coffee">
+import RichTextEditor from '../components/RichTextEditor'
 export default 
   name: 'Page1'
+  components: {
+    RichTextEditor
+  }
 </script>

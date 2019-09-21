@@ -11,8 +11,7 @@ module.exports = {
   module: {
     rules: [{
         test: /\.s[ac]ss$/i,
-        use: [
-          {
+        use: [{
             // Adds CSS to the DOM by injecting a `<style>` tag
             loader: 'style-loader'
           },
@@ -60,6 +59,15 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.svg$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          }
+        }]
       }
     ]
   },
