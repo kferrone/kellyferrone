@@ -5,15 +5,13 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-	entry: {
-	app: './client/src/main.js'
-	},
-	 module: {
-    rules: [
-      {
+  entry: {
+    app: './client/src/main.js'
+  },
+  module: {
+    rules: [{
         test: /\.(scss)$/,
-        use: [
-          {
+        use: [{
             // Adds CSS to the DOM by injecting a `<style>` tag
             loader: 'style-loader'
           },
@@ -40,9 +38,21 @@ module.exports = {
       },
       {
         test: /\.coffee$/,
-        use: [
+        use: [{
+          loader: 'coffee-loader'
+        }]
+      },
+      {
+        test: /\.pug$/,
+        oneOf: [
+          // this applies to `<template lang="pug">` in Vue components
           {
-            loader: 'coffee-loader'
+            resourceQuery: /^\?vue/,
+            use: ['pug-plain-loader']
+          },
+          // this applies to pug imports inside JavaScript
+          {
+            use: ['raw-loader', 'pug-plain-loader']
           }
         ]
       },
@@ -51,16 +61,16 @@ module.exports = {
         loader: 'vue-loader'
       }
     ]
-  	},
-    resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js'
-        },
-        extensions: ['*', '.js', '.vue', '.json']
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
     },
-    plugins: [
-      new VueLoaderPlugin()
-    ]
+    extensions: ['*', '.js', '.vue', '.json']
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 
 
 };

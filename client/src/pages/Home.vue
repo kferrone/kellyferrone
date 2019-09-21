@@ -1,11 +1,9 @@
-<template>
-<div>
-	<h1>Home</h1>
-	<ul>
-		<li><router-link to="/page1"> Page 1</router-link></li>
-	</ul>
-	
-</div>
+<template lang="pug">
+#home
+  h1#title Home
+  ul
+    li
+      router-link(to='page1') Page 1
 </template>
 <script lang="coffee">
 import BackEndWrapper from '../services/BackEndWrapper'
