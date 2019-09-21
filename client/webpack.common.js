@@ -10,8 +10,9 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.(scss)$/,
-        use: [{
+        test: /\.s[ac]ss$/i,
+        use: [
+          {
             // Adds CSS to the DOM by injecting a `<style>` tag
             loader: 'style-loader'
           },
@@ -32,7 +33,7 @@ module.exports = {
           },
           {
             // Loads a SASS/SCSS file and compiles it to CSS
-            loader: 'sass-loader'
+            loader: 'sass-loader?indentedSyntax'
           }
         ]
       },
