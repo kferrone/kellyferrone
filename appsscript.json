@@ -1,10 +1,31 @@
 {
   "timeZone": "America/New_York",
   "dependencies": {
+    "libraries": [{
+      "userSymbol": "FirestoreApp",
+      "libraryId": "1VUSl4b1r1eoNcRWotZM3e87ygkxvXltOgyDZhixqncz9lQ3MjfT1iKFw",
+      "version": "29",
+      "developmentMode": false
+    }]
   },
   "webapp": {
     "access": "MYSELF",
     "executeAs": "USER_DEPLOYING"
   },
+  "executionApi": {
+    "access": "ANYONE"
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.deployments",
+    "https://www.googleapis.com/auth/script.projects",
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/script.webapp.deploy",
+    "https://www.googleapis.com/auth/drive.metadata.readonly",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/service.management",
+    "https://www.googleapis.com/auth/logging.read",
+    "https://www.googleapis.com/auth/cloud-platform",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
   "exceptionLogging": "STACKDRIVER"
 }

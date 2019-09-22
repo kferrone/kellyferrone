@@ -1,0 +1,31 @@
+steps:
+
+- id: install
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+
+- id: login
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['run','ci:login']
+
+- id: server
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['run','gas']
+  env:
+    - 'NODE_ENV=production'
+
+- id: client
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['run','prod']
+  env:
+    - 'NODE_ENV=production'
+
+- id: deploy
+  name: 'gcr.io/$PROJECT_ID/clasp'
+  dir: './dist/gas'
+  args: ['push','-y']
+
+substitutions:
+  _CLASPRC: 'your clasp rc file'
+  _FIREBASE_EMAIL: 'email from firebase service account'
+  _FIREBASE_KEY: 'private key from firebase service account'
