@@ -4,17 +4,13 @@ steps:
   name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 
-- id: login
-  name: 'gcr.io/cloud-builders/npm'
-  args: ['run','ci:login']
-
-- id: server
+- id: build-server
   name: 'gcr.io/cloud-builders/npm'
   args: ['run','gas']
   env:
     - 'NODE_ENV=production'
 
-- id: client
+- id: build-client
   name: 'gcr.io/cloud-builders/npm'
   args: ['run','prod']
   env:
@@ -26,6 +22,5 @@ steps:
   args: ['push','-y']
 
 substitutions:
-  _CLASPRC: 'your clasp rc file'
-  _FIREBASE_EMAIL: 'email from firebase service account'
-  _FIREBASE_KEY: 'private key from firebase service account'
+  _CLASPRC: 'your clasp rc file in your home dir after logging in locally'
+  _SCRIPT_ID: 'your script id of the apps script project to deploy to'
