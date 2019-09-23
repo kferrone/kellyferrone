@@ -1,7 +1,7 @@
 # My Blog Admin
-Single Page App on Google Apps Script to manage the firebase blog in firestore. 
+Single Page App on Google Apps Script to manage the firebase blog in firestore.
 
-The base code of the app is forked from:  
+The base code of the app is forked from:
 [gsmart-in/AppsCurryStep3](https://github.com/gsmart-in/AppsCurryStep3)
 
 ## Usage
@@ -49,14 +49,14 @@ In order to Mock the responses from your Google Apps Script API, update client/s
 The client/src/pages contains the partial pages. See src/pages/routes.js where the routes are configured.
 You can customize the global styles in src/pages/scss. This project uses bootstrap as CSS framework.
 
-The server/src folder contains the server side (Apps Script) code. You can use ES6 or npm modules in lib.js and any classes/files included in lib.js. 
+The server/src folder contains the server side (Apps Script) code. You can use ES6 or npm modules in lib.js and any classes/files included in lib.js.
 api.js exposes the Apps Script API that the client side calls (see client/src/services/GASBackEnd.js)
 
 
 ## How does it work?
 In the front end, it uses webpack and babel to cross compile and generate the bundle.
 Then it uses html-webpack-inline-source-plugin to inline the whole Javascript and CSS in to the generated index.html file.
-You can see the client side setup in the client/webpack.prod.js 
+You can see the client side setup in the client/webpack.prod.js
 
 ## Building the project
 
@@ -70,9 +70,13 @@ will build the local development version. The output files are placed in deploy/
 npm run prod
 ```
 
-will build the 'production' version that is ready to be uploaded to Apps Script. 
+will build the 'production' version that is ready to be uploaded to Apps Script.
 
+## Set Some Props From Local
 
+```sh
+clasp run 'setProperties' --params '[{"firebaseEmail":"'"$_FIREBASE_EMAIL"'","firebaseKey":"'"$_FIREBASE_KEY"'"}]'
+```
 
 #### Disclaimers
 The author does not represent nor associated with Google in any way. This is project is only for learning purposes.
