@@ -16,10 +16,15 @@ steps:
   env:
     - 'NODE_ENV=production'
 
-- id: deploy
+- id: push
   name: 'gcr.io/$PROJECT_ID/clasp'
   dir: './dist/gas'
-  args: ['push','-y']
+  args: ['push','-f']
+
+- id: deploy
+  name:
+  dir: './dist/gas'
+  args: ['deploy','$TAG_NAME']
 
 substitutions:
   _CLASPRC: 'your clasp rc file in your home dir after logging in locally'
