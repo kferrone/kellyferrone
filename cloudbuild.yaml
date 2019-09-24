@@ -22,7 +22,7 @@ steps:
   args: ['push','-f']
 
 - id: deploy
-  name:
+  name: 'gcr.io/$PROJECT_ID/clasp'
   dir: './dist/gas'
   args: ['deploy','$TAG_NAME']
 
