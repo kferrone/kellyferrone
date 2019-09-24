@@ -1,6 +1,6 @@
 {
   "name": "kellyferrone-admin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An embeddable Google Apps Script admin interface for the blog",
   "main": "index.js",
   "scripts": {
