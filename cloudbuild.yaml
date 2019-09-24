@@ -18,21 +18,21 @@ steps:
 
 - id: push
   name: 'gcr.io/$PROJECT_ID/clasp'
-  dir: './dist/gas'
   args: ['push','-f']
   env:
     - 'CLASPRC=$_CLASPRC'
     - 'SCRIPT_ID=$_SCRIPT_ID'
     - 'PROJECT_ID=$PROJECT_ID'
+    - 'ROOT_DIR=./dist/gas'
 
 - id: deploy
   name: 'gcr.io/$PROJECT_ID/clasp'
-  dir: './dist/gas'
-  args: ['deploy','$TAG_NAME']
+  args: ['deploy']
   env:
     - 'CLASPRC=$_CLASPRC'
     - 'SCRIPT_ID=$_SCRIPT_ID'
     - 'PROJECT_ID=$PROJECT_ID'
+    - 'ROOT_DIR=./dist/gas'
 
 substitutions:
   _CLASPRC: 'your clasp rc file in your home dir after logging in locally'

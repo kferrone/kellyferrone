@@ -6,7 +6,7 @@ module.exports = {
   entry:{
       lib:'./server/src/lib.js'
   },
-  output: 
+  output:
   {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../dist/gas'),
@@ -33,13 +33,12 @@ module.exports = {
             }
           }
         }
-      ] 
+      ]
   },
   plugins: [
     new CopyPlugin([
-        'server/src/api.js',
-        'appsscript.json',
-        '.clasp.json'
+        'server/src/Code.js',
+        'appsscript.json'
       ])
   ]
 };
