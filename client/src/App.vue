@@ -4,6 +4,9 @@
 			router-view
 </template>
 <script lang="coffee">
+import BackEndWrapper from './services/BackEndWrapper'
 export default
-  name: 'App'
+	name: 'App'
+	provide: ->
+		gas: new BackEndWrapper();
 </script>

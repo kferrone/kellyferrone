@@ -16,6 +16,10 @@ class BackEndWrapper
 		}
 	}
 
+	getPosts() {
+		return this.real.getPosts();
+	}
+
 	getRandomNumbers()
 	{
 		return this.real.getRandomNumbers();

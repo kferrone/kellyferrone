@@ -1,7 +1,11 @@
 {
   "timeZone": "America/New_York",
   "dependencies": {
-
+    "libraries": [{
+      "userSymbol": "FirebaseApp",
+      "libraryId": "Mn3kXgh0V68ueSoGH-jnRRF23JKJcw30W",
+      "version": "6"
+    }]
   },
   "webapp": {
     "access": "MYSELF",
